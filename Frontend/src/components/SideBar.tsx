@@ -10,16 +10,13 @@ import {
   FaChevronRight,
   FaBeer,
 } from "react-icons/fa";
+import { appname } from "../pages/Home";
+
 interface SideBarProps {
   isExpanded: boolean;
   onToggle: () => void;
 }
 const SideBar: React.FC<SideBarProps> = ({ isExpanded, onToggle }) => {
-  // const [isExpanded, setIsExpanded] = useState(true);
-
-  // const toggleSidebar = () => {
-  //   setIsExpanded(!isExpanded);
-  // };
 
   const menuItems = [
     { to: "/", label: "Home", icon: <FaHome /> },
@@ -37,7 +34,7 @@ const SideBar: React.FC<SideBarProps> = ({ isExpanded, onToggle }) => {
     >
       <div className="flex items-center justify-between p-4">
         <span className="font-bold text-xl">
-          {isExpanded ? "MyApp" : <FaBeer />}{" "}
+          {isExpanded ?<>{appname}</> : <FaBeer />}{" "}
           {/* Replace FaBeer with your icon */}
         </span>
         <button onClick={onToggle} className="focus:outline-none">

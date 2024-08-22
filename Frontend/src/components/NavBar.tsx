@@ -27,7 +27,7 @@ const NavBar: React.FC = () => {
       case "/logout":
         return "Logout";
       default:
-        return "MyApp"; // Default title
+        return <>{appname}</>; // Default title
     }
   };
 

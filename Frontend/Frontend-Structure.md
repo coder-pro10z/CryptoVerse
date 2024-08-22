@@ -34,7 +34,12 @@ my-react-app/
 │   │   ├── Login.tsx             # Login page component
 │   │   ├── Register.tsx          # Register page component
 │   │   ├── Profile.tsx           # Profile page component (if any)
-│   │   └── Settings.tsx          # Settings page component (if any)
+│   │   ├── Settings.tsx          # Settings page component (if any)
+│   │   ├── Cryptocurrencies.tsx          # Settings page component (if any)
+│   │   ├── CryptoDetails.tsx          # Settings page component (if any)
+│   │   ├── Exchanges.tsx          # Settings page component (if any)
+│   │   ├── News.tsx          # Settings page component (if any)
+│   │   ├── index.js          # Settings page component (if any)
 │   │
 │   ├── styles/                   # Global and component-specific styles
 │   │   ├── globals.css           # Global CSS styles
@@ -56,7 +61,6 @@ my-react-app/
 ### Explanation of Key Folders and Files
 
 1. **`public/`**: Contains the HTML template and static assets like the favicon.
-   
 2. **`src/assets/`**: Stores images, fonts, and other static resources used in the project.
 
 3. **`src/components/`**: Houses reusable components, such as `NavBar`, `SideBar`, and others. This keeps your UI elements modular and reusable across different pages.
@@ -77,19 +81,21 @@ my-react-app/
 
 11. **`src/utils/`**: Contains utility functions that are used across the application, such as helper functions for formatting dates, etc.
 
-12. **Environment Files**: 
+12. **Environment Files**:
+
     - `.env`: Stores environment variables like API keys and configuration settings that shouldn't be hardcoded.
 
-13. **Configuration and Documentation**: 
+13. **Configuration and Documentation**:
     - `tsconfig.json`: TypeScript configuration file.
     - `README.md`: Provides documentation for your project.
 
 ### Integration Example
+
 To use the `appname` inside `NavBar`, ensure it is correctly exported from `Home.tsx`:
 
 ```tsx
 // src/pages/Home.tsx
-export const appname = 'My Awesome App';
+export const appname = "My Awesome App";
 
 const HomePage: React.FC = () => {
   return (
@@ -106,9 +112,9 @@ Then, import and use it in your `NavBar`:
 
 ```tsx
 // src/components/NavBar.tsx
-import React from 'react';
-import { appname } from '../pages/Home';
-import { FaIcons } from 'react-icons/fa';
+import React from "react";
+import { appname } from "../pages/Home";
+import { FaIcons } from "react-icons/fa";
 
 const NavBar: React.FC = () => {
   return (
@@ -126,4 +132,10 @@ export default NavBar;
 ```
 
 ### Flexibility
+
 This structure is flexible and scalable. You can add more directories, like `services` for API calls or `types` for TypeScript types, as your project grows.
+
+
+### Adding To This BoilerPlate To Create a New Project 
+**Title:** CryptoVerse
+**Description:** To Explore Top CryptoCurrency in the Current Market.
