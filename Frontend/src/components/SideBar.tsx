@@ -11,15 +11,31 @@ import {
   FaBeer,
 } from "react-icons/fa";
 import { appname } from "../pages/Home";
+import { Button, Menu, Typography, Avatar } from "antd";
+import {
+  HomeOutlined,
+  MenuOutlined,
+  MoneyCollectOutlined,
+  BulbOutlined,
+  FundOutlined,
+} from "@ant-design/icons";
+import icon from "../assets/images/cryptoverse.png";
 
 interface SideBarProps {
   isExpanded: boolean;
   onToggle: () => void;
 }
 const SideBar: React.FC<SideBarProps> = ({ isExpanded, onToggle }) => {
-
   const menuItems = [
-    { to: "/", label: "Home", icon: <FaHome /> },
+    { to: "/", label: "Home", icon: <HomeOutlined /> },
+    {
+      to: "/cryptocurrencies",
+      label: "Cryptocurrencies",
+      icon: <FundOutlined />,
+    },
+    // { to: "/", label: "CryptoDetails", icon: < /> },
+    { to: "/exchanges", label: "Exchanges", icon: <MoneyCollectOutlined /> },
+    { to: "/news", label: "News", icon: <BulbOutlined /> },
     { to: "/profile", label: "Profile", icon: <FaUser /> },
     { to: "/settings", label: "Settings", icon: <FaCog /> },
     { to: "/about", label: "About", icon: <FaInfo /> },
@@ -34,7 +50,27 @@ const SideBar: React.FC<SideBarProps> = ({ isExpanded, onToggle }) => {
     >
       <div className="flex items-center justify-between p-4">
         <span className="font-bold text-xl">
-          {isExpanded ?<>{appname}</> : <FaBeer />}{" "}
+          {isExpanded ? (
+            // <div className="flex items-center text-white">
+            //   <Avatar src={icon} />
+            //   <Typography.Title level={2} className="logo text-white">
+            //     {appname}
+            //   </Typography.Title>
+            // </div>
+            <div className="flex items-center text-white">
+              <Avatar src={icon} style={{ backgroundColor: "transparent",filter: 'invert(1)' }} />
+              <Typography.Title
+                level={2}
+                className="logo text-white"
+                style={{ margin: 0, color: "white" }}
+              >
+                {appname}
+              </Typography.Title>
+            </div>
+          ) : (
+            // <FaBeer />
+            <Avatar src={icon} style={{ backgroundColor: "transparent",filter: 'invert(1)' }} />
+          )}{" "}
           {/* Replace FaBeer with your icon */}
         </span>
         <button onClick={onToggle} className="focus:outline-none">

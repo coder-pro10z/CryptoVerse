@@ -1,6 +1,3 @@
-// src/pages/HomePage.tsx
-// import DonutChart from 'components/DonutChart';
-import TimeTracker from 'components/TimeTracker';
 import React from 'react';
 
 const appname='CryptoVerse';

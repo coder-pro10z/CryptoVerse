@@ -10,6 +10,9 @@ import RegisterPage from './pages/Register';
 import { AuthProvider } from './components/AuthContext';
 import Logout from './components/Logout';
 import PrivateRoute from './routes/PrivateRoute'; // Uncomment if used
+import Cryptocurrencies from './pages/Cryptocurrencies';
+import Exchanges from './pages/Exchanges';
+import News from './pages/News';
 
 function App() {
   return (
@@ -25,6 +28,11 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            {/* Add routes for CrytoVerse Components */}
+            <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+            <Route path="/exchanges" element={<Exchanges />} />
+            <Route path="/news" element={<News />} />
+            {/* <Route path="/cryptodetails" element={<RegisterPage />} /> */}
             {/* Catch-all route for 404 */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

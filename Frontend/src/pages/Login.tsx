@@ -20,19 +20,6 @@ const LoginPage: React.FC = () => {
     setPassword(event.target.value);
   };
 
-  // const handleLogin = async () => {
-  //   // Handle login logic here
-  //   try {
-  //     const res = await api.post('/auth/login', { email, password });
-  //     console.log('login successful:', res.data);
-  //     // Optionally redirect or display a success message
-  //   } catch (error) {
-  //     console.error('Login failed:',error);
-  //     // Optionally display error messages
-  //   }
-  //   console.log('Logging in with:', { email, password });
-  // };
-
   const handleLogin = async () => {
     try {
       const response = await fetch("http://localhost:5000/api/auth/login", {

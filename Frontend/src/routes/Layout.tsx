@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
+import Footer from "../components/Footer"; // Import the Footer component
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -31,8 +32,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           }`}
         >
           {children} {/* Render the page content here */}
+
         </main>
       </div>
+          <Footer  />
+
+      {/* Footer always at the bottom */}
+      {/* <Footer  /> */}
     </div>
   );
 };
