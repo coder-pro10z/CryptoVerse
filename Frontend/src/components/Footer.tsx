@@ -10,7 +10,7 @@ const Footer = () => {
         <Typography.Title level={5} className="footer-title">
           {appname}
           <br />
-          All Rights Reserved
+          All Rights Reserved.
         </Typography.Title>
       <Space className="footer-space">
         <Link to='/' className="footer-link">Home</Link>
