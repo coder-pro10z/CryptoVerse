@@ -194,3 +194,98 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 This `README.md` should cover most of what users need to know to set up and run your project. Adjust the content as necessary to fit your specific project setup and requirements.
+```
+CryptoVerse
+├─ Backend
+│  ├─ .env
+│  ├─ Backend-Structure.md
+│  ├─ config
+│  │  └─ db.js
+│  ├─ controllers
+│  │  ├─ authControllers.js
+│  │  └─ userControllers.js
+│  ├─ middleware
+│  │  └─ authMiddleware.js
+│  ├─ models
+│  │  └─ User.js
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ routes
+│  │  ├─ authRoutes.js
+│  │  └─ userRoutes.js
+│  ├─ server.js
+│  └─ utils
+│     └─ generateToken.js
+├─ Frontend
+│  ├─ Frontend-Structure.md
+│  ├─ how to Setup.md
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ postcss.config.js
+│  ├─ public
+│  │  ├─ favicon.ico
+│  │  ├─ index.html
+│  │  ├─ logo192.png
+│  │  ├─ logo512.png
+│  │  ├─ manifest.json
+│  │  └─ robots.txt
+│  ├─ README.md
+│  ├─ src
+│  │  ├─ app
+│  │  │  └─ store.js
+│  │  ├─ App.css
+│  │  ├─ App.tsx
+│  │  ├─ assets
+│  │  │  └─ images
+│  │  │     └─ cryptoverse.png
+│  │  ├─ components
+│  │  │  ├─ AlertBox.tsx
+│  │  │  ├─ AuthContext.tsx
+│  │  │  ├─ Button.tsx
+│  │  │  ├─ DonutChart.tsx
+│  │  │  ├─ Footer.tsx
+│  │  │  ├─ Header.tsx
+│  │  │  ├─ Input.tsx
+│  │  │  ├─ Logout.tsx
+│  │  │  ├─ Menu.tsx
+│  │  │  ├─ NavBar.tsx
+│  │  │  ├─ SideBar.tsx
+│  │  │  ├─ SuccessDialog.tsx
+│  │  │  └─ TimeTracker.tsx
+│  │  ├─ index.css
+│  │  ├─ index.tsx
+│  │  ├─ logo.svg
+│  │  ├─ pages
+│  │  │  ├─ Cryptocurrencies.tsx
+│  │  │  ├─ CryptoDetails.tsx
+│  │  │  ├─ Exchanges.tsx
+│  │  │  ├─ Home.tsx
+│  │  │  ├─ index.js
+│  │  │  ├─ Login.tsx
+│  │  │  ├─ News.tsx
+│  │  │  ├─ Register.tsx
+│  │  │  └─ Welcome.tsx
+│  │  ├─ routes
+│  │  │  ├─ Layout.tsx
+│  │  │  └─ PrivateRoute.tsx
+│  │  ├─ services
+│  │  │  └─ cryptoApi.js
+│  │  ├─ styles
+│  │  │  ├─ Button.module.scss
+│  │  │  ├─ colors.module.scss
+│  │  │  ├─ Footer.css
+│  │  │  ├─ Footer.module.scss
+│  │  │  ├─ Input.module.scss
+│  │  │  ├─ pages
+│  │  │  │  ├─ Login.module.scss
+│  │  │  │  └─ Register.module.scss
+│  │  │  └─ SuccessDialog.module.scss
+│  │  ├─ types
+│  │  │  └─ global.d.ts
+│  │  └─ utils
+│  │     └─ api.js
+│  ├─ tailwind.config.js
+│  └─ tsconfig.json
+└─ ReadMe.md
+
+```
