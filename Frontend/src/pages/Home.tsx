@@ -39,11 +39,13 @@ const globalStats= data?.data?.stats;
           <Col span={12}><Statistic title="Total 24h Volume" value={millify(globalStats.total24hVolume)}/></Col>
           <Col span={12}><Statistic title="Total Markets" value={millify(globalStats.totalMarkets)}/></Col>
         </Row>
+
         <div className="home-heading-container">
-          <Title className="home-title" level={2}>Top 10 Cryptocurrencies in the world.</Title>
+          <Title className="home-title" level={2}>Top 10 Cryptocurrencies in the world</Title>
           <Title className="show-more" level={3}><Link to='/cryptocurrencies'>Show More</Link></Title>
         </div>
-        <Cryptocurrencies />
+        <Cryptocurrencies simplified/>
+
         <div className="home-heading-container">
           <Title className="home-title" level={2}>Latest Crypto News</Title>
           <Title className="show-more" level={3}><Link to='/news'>Show More</Link></Title>
