@@ -1,32 +1,62 @@
-/* Cryptocurrencies.scss */
-
+/* Ensure equal card height */
 .crypto-card-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-  }
-  
-  .crypto-card-image-container {
-    width: 50px; /* Set the image size */
-    height: 50px;
-    margin-bottom: 10px;
-  }
-  
-  .crypto-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Make sure the image doesn't overflow */
-  }
-  
-  .crypto-info {
-    text-align: center; /* Center the text inside the card */
-    width: 100%;
-  }
-  
-  .crypto-info p {
-    margin: 0;
-    font-size: 14px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px; /* Adjust card height */
+  padding: 12px;
+  overflow: hidden;
+}
+
+/* Align rank, name, and icon */
+.crypto-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.crypto-card-header span {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Make the crypto icon smaller */
+.crypto-card-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Left-align the crypto info */
+.crypto-info {
+  text-align: left; /* Align text to the left */
+  width: 100%;
+  margin-top: 8px;
+}
+
+.crypto-info p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+/* General card container */
+.crypto-card-container {
+  width: 100%;
+}
+
+/* Search bar styles */
+.search-crypto {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; 
+}
+
+.search-crypto input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 20px;
+}

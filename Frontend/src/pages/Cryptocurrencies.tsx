@@ -1,57 +1,9 @@
-// import React from "react";
-// import { useGetCryptosQuery } from "../services/cryptoApi";
-// import { Card, Row, Col } from "antd";
-// import millify from "millify";
-// import { Link } from "react-router-dom";
-
-// interface CryptocurrenciesProps {
-//   simplified?: boolean;
-// }
-
-// const Cryptocurrencies: React.FC<CryptocurrenciesProps> = ({ simplified }) => {
-//   const count = simplified ? 10 : 100;
-//   const { data: cryptosList, isFetching } = useGetCryptosQuery({});
-
-//   if (isFetching) return <div>Loading...</div>;
-
-//   const cryptos = cryptosList?.data?.coins;
-//   // const [cryptos,setCrytos] = cryptosList?.data?.coins;
-
-//   // console.log(cryptosList?.data?.coins)
-//   console.log(cryptos)
-
-//   return (
-//     <>
-//        <Row gutter={[32, 32]} className="crypto-card-container">
-//          {cryptos?.slice(0, count).map((currency:any) => ( 
-//         // {cryptos.map((currency:any) => (
-//           <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.id}>
-//             <Link to={`/crypto/${currency.id}`}>
-//               <Card
-//                 title={`${currency.rank}. ${currency.name}`}
-//                 extra={<img className="crypto-image" src={currency.iconUrl} alt={currency.name} />}
-//                 hoverable
-//               >
-//                 <p>Price: {millify(currency.price)}</p>
-//                 <p>Market Cap: {millify(currency.marketCap)}</p>
-//                 <p>Daily Change: {currency.change}%</p>
-//               </Card>
-//             </Link>
-//           </Col>
-//         ))}
-//       </Row> 
-//     </>
-//   );
-// };
-
-// export default Cryptocurrencies;
-
-import React from "react";
+import React, { useState } from "react";
 import { useGetCryptosQuery } from "../services/cryptoApi";
-import { Card, Row, Col } from "antd";
+import { Card, Row, Col, Input } from "antd";
 import millify from "millify";
 import { Link } from "react-router-dom";
-import "../styles/Cryptocurrencies.module.scss"; // Import the styles for custom styling
+import styles from "../styles/Cryptocurrencies.module.scss"; // Import the styles for custom styling
 
 interface CryptocurrenciesProps {
   simplified?: boolean;
@@ -61,32 +13,48 @@ const Cryptocurrencies: React.FC<CryptocurrenciesProps> = ({ simplified }) => {
   const count = simplified ? 10 : 100;
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
 
+  // Search state
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
   if (isFetching) return <div>Loading...</div>;
 
   const cryptos = cryptosList?.data?.coins;
 
+  // Filter cryptocurrencies based on search term
+  const filteredCryptos = cryptos?.filter((crypto: any) =>
+    crypto.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
-      <Row gutter={[32, 32]} className="crypto-card-container">
-        {cryptos?.slice(0, count).map((crypto:any) => (
-          <Col xs={24} sm={12} lg={6} className="crypto-card" key={crypto.id}>
+      {/* Search Input */}
+      {!simplified && (
+        <div className={styles["search-crypto"]}>
+          <Input
+            placeholder="Search Cryptocurrency"
+            onChange={(e) => setSearchTerm(e.target.value)}
+            value={searchTerm}
+          />
+        </div>
+      )}
+      
+      <Row gutter={[32, 32]} className={styles["crypto-card-container"]}>
+        {filteredCryptos?.slice(0, count).map((crypto: any) => (
+          <Col xs={24} sm={12} lg={4} xl={5} key={crypto.id}> {/* 5 cards per row */}
             <Link to={`/crypto/${crypto.id}`}>
-              <Card
-                title={`${crypto.rank}. ${crypto.name}`}
-                hoverable
-                className="crypto-card-item"
-              >
-                {/* Image Section */}
-                <div className="crypto-card-image-container">
+              <Card hoverable className={styles["crypto-card-item"]}>
+                {/* Custom Title Section with Icon */}
+                <div className={styles["crypto-card-header"]}>
+                  <span>{`${crypto.rank}. ${crypto.name}`}</span>
                   <img
-                    className="crypto-image"
+                    className={styles["crypto-card-icon"]}
                     src={crypto.iconUrl}
                     alt={crypto.name}
                   />
                 </div>
                 
-                {/* Crypto Info */}
-                <div className="crypto-info">
+                {/* Left-aligned Crypto Info */}
+                <div className={styles["crypto-info"]}>
                   <p>Price: {millify(crypto.price)}</p>
                   <p>Market Cap: {millify(crypto.marketCap)}</p>
                   <p>Daily Change: {crypto.change}%</p>
