@@ -1,3 +1,31 @@
+// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+// const cryptoApiHeaders = {
+//   "x-rapidapi-key": "66270fe653mshbdb155115e6bb11p1413c7jsn24fefab182e4",
+//   "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+// };
+
+// const baseUrl = "https://coinranking1.p.rapidapi.com";
+
+// const createRequest = (url) => ({ url, headers: cryptoApiHeaders });
+
+// export const cryptoApi = createApi({
+//   reducerPath: "cryptoApi",
+//   baseQuery: fetchBaseQuery({ baseUrl }),
+//   endpoints: (builder) => ({
+//     getCryptos: builder.query({
+//       query: () => createRequest("/coins"),
+//     //endpoint Crypto Details
+//     getCryptoDetails:(builder).query({
+//       query: ()=> createRequest(`/coin/${id}`),
+//     })
+//     }),
+//   }),
+// });
+
+// export const {useGetCryptosQuery, useGetCryptoDetailsQuery }=cryptoApi;
+
+
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoApiHeaders = {
@@ -13,13 +41,58 @@ export const cryptoApi = createApi({
   reducerPath: "cryptoApi",
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
+    // Fetch multiple cryptocurrencies
     getCryptos: builder.query({
       query: () => createRequest("/coins"),
+    }),
+
+    // Fetch specific cryptocurrency details by ID
+    getCryptoDetails: builder.query({
+      query: ({uuid,timePeriod}) => createRequest(`/coin/${uuid}?${timePeriod}`),  // Pass the coin ID dynamically
+      
     }),
   }),
 });
 
-export const {useGetCryptosQuery,}=cryptoApi;
+// Correctly export hooks
+export const { useGetCryptosQuery, useGetCryptoDetailsQuery } = cryptoApi;
+
+
+
+/////
+// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+// const cryptoApiHeaders = {
+//   "x-rapidapi-key": "66270fe653mshbdb155115e6bb11p1413c7jsn24fefab182e4",
+//   "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+// };
+
+// const baseUrl = "https://coinranking1.p.rapidapi.com";
+
+// const createRequest = (url) => ({ url, headers: cryptoApiHeaders });
+
+// export const cryptoApi = createApi({
+//   reducerPath: "cryptoApi",
+//   baseQuery: fetchBaseQuery({ baseUrl }),
+//   endpoints: (builder) => ({
+//     // Fetch multiple cryptocurrencies
+//     getCryptos: builder.query({
+//       query: () => createRequest("/coins"),
+//     }),
+
+//     // Fetch specific cryptocurrency details by ID
+//     getCryptoDetails: builder.query({
+//       query: ({ uuid, timePeriod }) => ({
+//         url: `/coin/${uuid}`,
+//         // params: { referenceCurrencyUuid: uuid, timePeriod },
+//       }),
+//     }),
+//   }),
+// });
+
+// Correctly export hooks
+// export const { useGetCryptosQuery, useGetCryptoDetailsQuery } = cryptoApi;
+
 
 //     method: 'GET',
 //     url: 'https://coinranking1.p.rapidapi.com/stats',

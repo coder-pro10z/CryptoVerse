@@ -21,6 +21,9 @@ const Cryptocurrencies: React.FC<CryptocurrenciesProps> = ({ simplified }) => {
   const cryptos = cryptosList?.data?.coins;
 
   // Filter cryptocurrencies based on search term
+  console.log(cryptos)
+  console.log(cryptos.uuid)
+
   const filteredCryptos = cryptos?.filter((crypto: any) =>
     crypto.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -40,8 +43,14 @@ const Cryptocurrencies: React.FC<CryptocurrenciesProps> = ({ simplified }) => {
       
       <Row gutter={[32, 32]} className={styles["crypto-card-container"]}>
         {filteredCryptos?.slice(0, count).map((crypto: any) => (
-          <Col xs={24} sm={12} lg={4} xl={5} key={crypto.id}> {/* 5 cards per row */}
-            <Link to={`/crypto/${crypto.id}`}>
+          <Col xs={24} sm={12} lg={4} xl={5} key={crypto.uuid}> {/* 5 cards per row */}
+          
+            {/* <Link to={`/crypto/${crypto.rank}`}> */}
+
+
+            {/* // <li key={coin.uuid}> */}
+            {/* Link to the CryptoDetails page using the 'uuid' */}
+            <Link to={`/crypto/${crypto.uuid}`}>{crypto.name}
               <Card hoverable className={styles["crypto-card-item"]}>
                 {/* Custom Title Section with Icon */}
                 <div className={styles["crypto-card-header"]}>

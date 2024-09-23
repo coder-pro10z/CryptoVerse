@@ -13,6 +13,7 @@ import PrivateRoute from './routes/PrivateRoute'; // Uncomment if used
 import Cryptocurrencies from './pages/Cryptocurrencies';
 import Exchanges from './pages/Exchanges';
 import News from './pages/News';
+import CryptoDetails from './pages/CryptoDetails';
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
             <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
             <Route path="/exchanges" element={<Exchanges />} />
             <Route path="/news" element={<News />} />
-            {/* <Route path="/cryptodetails" element={<RegisterPage />} /> */}
+            {/* <Route path="/crypto/:coinId" element={<CryptoDetails />} /> */}
+            <Route path="/crypto/:uuid" element={<CryptoDetails />} />
             {/* Catch-all route for 404 */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
