@@ -1,6 +1,6 @@
 import React from "react";
 import millify from "millify";
-import { Typography, Row, Col, Statistic } from "antd";
+import { Typography, Row, Col, Statistic, Spin } from "antd";
 import { Link } from "react-router-dom";
 
 //to import custom hook to serve an query for API
@@ -20,6 +20,7 @@ console.log(data )
 console.log(data?.data)
 const globalStats= data?.data?.stats;
 // if(isFetching) return "loading..."
+if (isFetching) return <Spin />;
   return (
     <>
       {/* <div className="flex flex-col items-center justify-center h-full bg-gray-100 text-gray-800">

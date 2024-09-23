@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useGetCryptosQuery } from "../services/cryptoApi";
-import { Card, Row, Col, Input } from "antd";
+import { Card, Row, Col, Input, Spin } from "antd";
 import millify from "millify";
 import { Link } from "react-router-dom";
 import styles from "../styles/Cryptocurrencies.module.scss"; // Import the styles for custom styling
@@ -16,7 +16,7 @@ const Cryptocurrencies: React.FC<CryptocurrenciesProps> = ({ simplified }) => {
   // Search state
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  if (isFetching) return <div>Loading...</div>;
+  if (isFetching) return <Spin />;
 
   const cryptos = cryptosList?.data?.coins;
 
