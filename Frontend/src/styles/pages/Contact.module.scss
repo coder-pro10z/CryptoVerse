@@ -1,0 +1,55 @@
+.contact-container {
+    
+    padding: 40px;
+    text-align: center;
+  
+    .ant-typography {
+      font-size: 18px;
+    }
+  
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 40px; // Adjust spacing between contact items as needed
+      margin-top: 20px;
+    }
+  
+    .contact-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      @media (max-width: 768px) {  // On small screens
+        flex-direction: column;  // Stack the icon above the text
+        text-align: center;}
+  
+      a {
+        color: #36A2EB; // Feel free to change to your preferred color
+        &:hover {
+          color: #FF6384; // Hover color
+        }
+
+
+      }
+  
+      svg {
+        color: #fd2655;
+      }
+    }
+  
+    .ant-paragraph {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {  // On small screens
+        flex-direction: column;  // Stack the icon above the text
+        text-align: center;
+    }
+
+  }
+
+  
+
+  
