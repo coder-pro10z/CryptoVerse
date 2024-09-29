@@ -14,7 +14,7 @@ const Footer = () => {
         </Typography.Title>
       <Space className="footer-space">
         <Link to='/' className="footer-link">Home</Link>
-        <Link to='/exchanges' className="footer-link">Exchanges</Link>
+        <Link to='/cryptocurrencies' className="footer-link">Cryptocurrencies</Link>
         <Link to='/news' className="footer-link">News</Link>
       </Space>
     </div>

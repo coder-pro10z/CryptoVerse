@@ -6,6 +6,7 @@
   bottom: 0;
   color: white;
   text-align: center;
+  text-color:white; 
 }
 
 .footer-space {
@@ -17,7 +18,7 @@
 
 .footer-title {
   margin: 0;
-  color: white;
+  color: white !important;
 }
 
 .footer-link {
