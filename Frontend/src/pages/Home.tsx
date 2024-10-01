@@ -17,8 +17,8 @@ const HomePage = () => {
   const username = "";
   //to use the hook and state from the redux
   const {data, isFetching}=useGetCryptosQuery({});
-console.log(data )
-console.log(data?.data)
+// console.log(data )
+// console.log(data?.data)
 const globalStats= data?.data?.stats;
 // if(isFetching) return "loading..."
 if (isFetching) return <Spin />;

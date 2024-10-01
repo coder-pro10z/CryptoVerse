@@ -49,14 +49,14 @@ const NavBar: React.FC = () => {
         <div className="flex-1 text-center">
           <span className="text-lg font-semibold">{getPageTitle(path)}</span>
         </div>
-        <div className="flex font-semibold justify-between mx-auto space-x-4">
+        {/* <div className="flex font-semibold justify-between mx-auto space-x-4">
           {username ? (
             <span>Welcome, {username}</span>
           ) : (
             <a href="/login">Login</a>
           )}
           <Menu />
-        </div>
+        </div> */}
       </div>
     </header>
   );
