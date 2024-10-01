@@ -15,9 +15,12 @@ const NewsCard: React.FC<NewsCardProps> = ({ news }) => {
   return (
     <div className={styles.newsCard}>
       <img src={news.thumbnail} alt={news.title} className={styles.newsImage} />
-      <h3 className={styles.newsTitle}>{news.title}</h3>
+      <div className={styles.newsContent}>
+        <h3 className={styles.newsTitle}>{news.title}</h3>
       <p className={styles.newsExcerpt}>{news.excerpt}</p>
       <a href={news.url} className={styles.newsLink} target="_blank" rel="noopener noreferrer">Read more</a>
+        </div>    
+    
     </div>
   );
 };

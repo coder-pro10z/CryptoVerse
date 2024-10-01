@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 import { FaIcons } from "react-icons/fa";
 import { useAuth } from "./AuthContext";
 import { appname } from "../pages/Home";
+import { Avatar } from "antd";
+import icon from "../assets/images/cryptoverse.png";
 
 const NavBar: React.FC = () => {
   const { username } = useAuth(); // Get the username from context
@@ -36,7 +38,11 @@ const NavBar: React.FC = () => {
       <div className="container mx-auto flex justify-between items-center p-4">
         <div className="flex items-center space-x-4">
           {/* Icon or logo on the left */}
-          <FaIcons /> {/* Replace with your desired icon */}
+          {/* <FaIcons /> Replace with your desired icon */}
+          <Avatar
+                src={icon}
+                style={{ backgroundColor: "transparent", filter: "invert(1)" }}
+              />
           <span className="font-bold text-xl">{appname}</span>
         </div>
         {/* Dynamic title in the center */}

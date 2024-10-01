@@ -1,36 +1,71 @@
 .newsContainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 24px;
+    justify-content: flex-start;
+    width: 100%;
   }
   
   .newsCard {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 0.5px solid #ddd;
+    border-radius: 12px;
     overflow: hidden;
-    padding: 16px;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Add relative positioning for better control of child elements */
+  }
+  
+  .newsCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
   
   .newsImage {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .newsContent {
+    padding: 16px;
+    // flex-grow: 1;
+    flex-grow: 1; /* Ensures the content area grows to take up space */
+  margin-bottom: 40px; /* Prevents content from touching the button */
   }
   
   .newsTitle {
     font-size: 1.2rem;
     font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
   }
   
   .newsExcerpt {
     font-size: 1rem;
+    color: #666;
+    margin-bottom: 16px;
+    line-height: 1.4;
   }
   
   .newsLink {
-    display: inline-block;
-    margin-top: 8px;
-    color: #007bff;
+    position: absolute; /* Position the link absolutely within the card */
+    bottom: 0; /* Stick to the bottom */
+    left: 0; /* Stick to the left */
+    margin: 16px; /* Add a bit of spacing from the edges */
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
     text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .newsLink:hover {
+    background-color: #0056b3;
   }
   
