@@ -21,8 +21,8 @@ const Cryptocurrencies: React.FC<CryptocurrenciesProps> = ({ simplified }) => {
   const cryptos = cryptosList?.data?.coins;
 
   // Filter cryptocurrencies based on search term
-  console.log(cryptos)
-  console.log(cryptos.uuid)
+  // console.log(cryptos)
+  // console.log(cryptos.uuid)
 
   const filteredCryptos = cryptos?.filter((crypto: any) =>
     crypto.name.toLowerCase().includes(searchTerm.toLowerCase())

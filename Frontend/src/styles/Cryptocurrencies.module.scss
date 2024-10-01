@@ -1,63 +1,86 @@
-/* Ensure equal card height */
+/* Ensure equal card height with some breathing space */
 .crypto-card-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 250px; /* Adjust card height */
-  padding: 12px;
+  height: 260px; /* Slightly taller cards for better readability */
+  padding: 15px; /* Increased padding */
+  border: 1px solid #e0e0e0; /* Added subtle border */
+  border-radius: 10px; /* Softened corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white; /* Background to make content pop */
   overflow: hidden;
 }
 
-/* Align rank, name, and icon */
+.crypto-card-item:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Align rank, name, and icon neatly */
 .crypto-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 12px; /* Reduced space to tighten the design */
 }
 
 .crypto-card-header span {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Slightly increased font size for readability */
+  color: #333; /* Darker text for better contrast */
 }
 
-/* Make the crypto icon smaller */
+/* Reduce the crypto icon size with padding */
 .crypto-card-icon {
-  width: 24px;
-  height: 24px;
+  width: 30px; /* Increased icon size for better visibility */
+  height: 30px;
   object-fit: contain;
+  margin-left: 5px; /* Added spacing to the left */
 }
 
-/* Left-align the crypto info */
+/* Adjust the alignment and spacing for the crypto info */
 .crypto-info {
-  text-align: left; /* Align text to the left */
+  text-align: left;
   width: 100%;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .crypto-info p {
-  margin: 8px 0;
-  font-size: 14px;
+  margin: 6px 0; /* Reduced margin for a more compact design */
+  font-size: 0.95rem; /* Adjusted font size */
+  color: #555; /* Softer text color for a clean look */
 }
 
-/* General card container */
+/* Container wrapping the cards */
 .crypto-card-container {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; /* Ensure the cards are spaced evenly */
+  gap: 5px;
 }
 
-/* Search bar styles */
+/* Search bar styles with improved alignment */
 .search-crypto {
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin: 30px 0 20px;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
+  align-items: center;
 }
 
 .search-crypto input {
-  width: 300px;
-  padding: 10px;
+  width: 320px; /* Slightly wider for better usability */
+  padding: 12px;
   font-size: 16px;
-  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.search-crypto input:focus {
+  border-color: #007bff; /* Highlight border on focus */
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.2); /* Subtle shadow for focus state */
+}
