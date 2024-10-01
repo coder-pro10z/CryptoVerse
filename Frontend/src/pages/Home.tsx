@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import Cryptocurrencies from "./Cryptocurrencies";
 import News from "./News";
+import styles from '../styles/pages/Home.module.scss'
 
 const appname = "CryptoVerse";
 const {Title} = Typography;
@@ -23,14 +24,6 @@ const globalStats= data?.data?.stats;
 if (isFetching) return <Spin />;
   return (
     <>
-      {/* <div className="flex flex-col items-center justify-center h-full bg-gray-100 text-gray-800">
-        <h1 className="text-5xl font-bold mb-4">
-          Welcome {username} to {appname}
-        </h1>
-        <p className="text-lg">
-          This is the Home Page. Navigate using the menu above.
-        </p>
-      </div> */}
       <>
         <Title level={2} className="heading">Global Crypto Stats</Title>
         <Row>
@@ -41,19 +34,18 @@ if (isFetching) return <Spin />;
           <Col span={12}><Statistic title="Total Markets" value={millify(globalStats?.totalMarkets)}/></Col>
         </Row>
 
-        <div className="home-heading-container">
+        <div className={styles["home-heading-container"]}>
           <Title className="home-title" level={2}>Top 10 Cryptocurrencies in the world</Title>
           <Title className="show-more" level={3}><Link to='/cryptocurrencies'>Show More</Link></Title>
         </div>
         <Cryptocurrencies simplified/>
 
-        <div className="home-heading-container">
+        <div className={styles["home-heading-container"]}>
           <Title className="home-title" level={2}>Latest Crypto News</Title>
           <Title className="show-more" level={3}><Link to='/news'>Show More</Link></Title>
         </div>
-        <News />
+        <News/> 
 
-        
       </>
     </>
   );
