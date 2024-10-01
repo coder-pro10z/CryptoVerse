@@ -34,11 +34,11 @@ const SideBar: React.FC<SideBarProps> = ({ isExpanded, onToggle }) => {
       icon: <FundOutlined />,
     },
     // { to: "/", label: "CryptoDetails", icon: < /> },
-    { to: "/exchanges", label: "Exchanges", icon: <MoneyCollectOutlined /> },
+    // { to: "/exchanges", label: "Exchanges", icon: <MoneyCollectOutlined /> },
     { to: "/news", label: "News", icon: <BulbOutlined /> },
-    { to: "/profile", label: "Profile", icon: <FaUser /> },
-    { to: "/settings", label: "Settings", icon: <FaCog /> },
-    { to: "/about", label: "About", icon: <FaInfo /> },
+    // { to: "/profile", label: "Profile", icon: <FaUser /> },
+    // { to: "/settings", label: "Settings", icon: <FaCog /> },
+    // { to: "/about", label: "About", icon: <FaInfo /> },
     { to: "/contact", label: "Contact", icon: <FaEnvelope /> },
   ];
 
@@ -58,7 +58,10 @@ const SideBar: React.FC<SideBarProps> = ({ isExpanded, onToggle }) => {
             //   </Typography.Title>
             // </div>
             <div className="flex items-center text-white">
-              <Avatar src={icon} style={{ backgroundColor: "transparent",filter: 'invert(1)' }} />
+              <Avatar
+                src={icon}
+                style={{ backgroundColor: "transparent", filter: "invert(1)" }}
+              />
               <Typography.Title
                 level={2}
                 className="logo text-white"
@@ -69,7 +72,10 @@ const SideBar: React.FC<SideBarProps> = ({ isExpanded, onToggle }) => {
             </div>
           ) : (
             // <FaBeer />
-            <Avatar src={icon} style={{ backgroundColor: "transparent",filter: 'invert(1)' }} />
+            <Avatar
+              src={icon}
+              style={{ backgroundColor: "transparent", filter: "invert(1)" }}
+            />
           )}{" "}
           {/* Replace FaBeer with your icon */}
         </span>
