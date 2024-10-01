@@ -10,14 +10,14 @@ interface NewsProps {
 
 const News: React.FC<NewsProps> = ({ simplified }) => {
   const { data, error, isLoading } = useGetCryptoNewsQuery({});
-  console.log(data)
+  // console.log(data)
 
   if (isLoading) return <Spin />;
   if (error) return <div>Error fetching news</div>;
 
   // Limit the number of news articles if 'simplified' prop is true
   const newsToDisplay = simplified ? data?.slice(0, 5) : data;
-console.log(newsToDisplay)
+// console.log(newsToDisplay)
   return (
     <div className={styles.newsContainer}>
       {newsToDisplay.data.map((news:any) => (

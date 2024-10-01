@@ -15,6 +15,9 @@ const NavBar: React.FC = () => {
 
   // Map paths to page titles
   const getPageTitle = (path: string) => {
+    if (path.startsWith("/crypto")) {
+      return "Crypto Details";
+    }
     switch (path) {
       case "/":
         return "Home";
@@ -28,6 +31,10 @@ const NavBar: React.FC = () => {
         return "Settings";
       case "/logout":
         return "Logout";
+      case "/cryptocurrencies":
+        return "Crypto Currencies";
+        case "/news":
+          return "News";
       default:
         return <>{appname}</>; // Default title
     }
