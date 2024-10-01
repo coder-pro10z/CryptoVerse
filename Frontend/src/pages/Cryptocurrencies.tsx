@@ -50,7 +50,8 @@ const Cryptocurrencies: React.FC<CryptocurrenciesProps> = ({ simplified }) => {
 
             {/* // <li key={coin.uuid}> */}
             {/* Link to the CryptoDetails page using the 'uuid' */}
-            <Link to={`/crypto/${crypto.uuid}`}>{crypto.name}
+            <Link to={`/crypto/${crypto.uuid}`}>
+            {/* {crypto.name} */}
               <Card hoverable className={styles["crypto-card-item"]}>
                 {/* Custom Title Section with Icon */}
                 <div className={styles["crypto-card-header"]}>
