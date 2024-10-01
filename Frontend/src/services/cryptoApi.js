@@ -26,6 +26,42 @@
 // export const {useGetCryptosQuery, useGetCryptoDetailsQuery }=cryptoApi;
 
 
+// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+// const cryptoApiHeaders = {
+//   "x-rapidapi-key": "66270fe653mshbdb155115e6bb11p1413c7jsn24fefab182e4",
+//   "x-rapidapi-host": "coinranking1.p.rapidapi.com",
+// };
+
+// const baseUrl = "https://coinranking1.p.rapidapi.com";
+
+// const createRequest = (url) => ({ url, headers: cryptoApiHeaders });
+
+// export const cryptoApi = createApi({
+//   reducerPath: "cryptoApi",
+//   baseQuery: fetchBaseQuery({ baseUrl }),
+//   endpoints: (builder) => ({
+//     // Fetch multiple cryptocurrencies
+//     getCryptos: builder.query({
+//       query: () => createRequest("/coins"),
+    
+// }),
+
+//     }),
+//   // Add this to cryptoApi.ts (or your API service file)
+//   getExchanges: builder.query({
+//     query: () => createRequest('/exchanges'),
+//     // Fetch specific cryptocurrency details by ID
+//     getCryptoDetails: builder.query({
+//       query: ({uuid,timePeriod}) => createRequest(`/coin/${uuid}?${timePeriod}`),  // Pass the coin ID dynamically
+      
+//     }),
+//   }),
+// });
+
+// // Correctly export hooks
+// export const { useGetCryptosQuery, useGetCryptoDetailsQuery, useGetExchangesQuery, } = cryptoApi;
+// /////////////////////
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoApiHeaders = {
@@ -46,16 +82,25 @@ export const cryptoApi = createApi({
       query: () => createRequest("/coins"),
     }),
 
-    // Fetch specific cryptocurrency details by ID
+    // Fetch exchange data
+    getExchanges: builder.query({
+      query: () => createRequest("/exchanges"),
+    }),
+
+    // Fetch specific cryptocurrency details by ID and time period
     getCryptoDetails: builder.query({
-      query: ({uuid,timePeriod}) => createRequest(`/coin/${uuid}?${timePeriod}`),  // Pass the coin ID dynamically
-      
+      query: ({ uuid, timePeriod }) =>
+        createRequest(`/coin/${uuid}?timePeriod=${timePeriod}`), // Pass the coin ID dynamically along with timePeriod
     }),
   }),
 });
 
 // Correctly export hooks
-export const { useGetCryptosQuery, useGetCryptoDetailsQuery } = cryptoApi;
+export const {
+  useGetCryptosQuery,
+  useGetCryptoDetailsQuery,
+  useGetExchangesQuery,
+} = cryptoApi;
 
 
 
